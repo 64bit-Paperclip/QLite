@@ -1,47 +1,83 @@
-# QLite
+# QLiteCollection ($)
 
-A lightweight, modern drop-in replacement for jQuery's common selector and DOM manipulation features. 
+A lightweight, high-performance, jQuery-inspired DOM manipulation and traversal library written in modern JavaScript. 
 
-QLite gives you the iconic $ syntax, method chaining, and everyday utility functions using native modern browser APIs, without the thousands of lines of legacy bloat.
+`QLiteCollection` gives you the familiar, chainable syntax of jQuery (`$`) using modern native browser APIs, keeping your footprint tiny without sacrificing the utility methods you use every day.
 
-## Important Conflict Warning
+---
 
-This library hijacks the global $ identifier. It is not compatible with running standard jQuery at the same time in the same global scope. It is specifically designed as a standalone, zero-bloat drop-in replacement for common jQuery features using modern vanilla JavaScript.
+## Features
+
+* **Familiar Syntax:** Use the classic `$(selector)` shorthand and chain methods effortlessly.
+* **Modern Array Behavior:** Iterate over collections using native loops, spread syntax, or check `.length`.
+* **Robust DOM Insertion:** Easily `append`, `prepend`, `before`, or `after` strings, native elements, or other collections.
+* **Clean Traversal:** Navigate up, down, and across the DOM tree with `.find()`, `.parent()`, and `.children()`.
+* **Zero Dependencies:** Pure vanilla JavaScript.
+
+---
 
 ## Installation
 
-Simply include the qlite.js file in your project before your main scripts:
+Simply drop the script into your project or include it via a script tag:
 
-```html
-<script src="qlite.js"></script>
-```
+    <script src="qlite.js"></script>
 
-## Features Included
+---
 
-* Selection and Traversal: $(selector), .find(selector)
-* Events: .on(event, handler)
-* Classes: .addClass(), .removeClass(), .toggleClass()
-* Attributes and Values: .attr(), .val()
-* Styles and Content: .css(), .html(), .text()
-* Iteration: .each(), $.ready()
+## Quick Start
 
-## Usage Examples
+    // Wait for DOM to be ready
+    $.ready(() => {
+        // Select elements and chain methods
+        $('.item')
+            .addClass('active')
+            .css('color', 'blue')
+            .text('Updated Text!');
+    });
 
-```javascript
-// Select and add a class / change CSS
-$('.my-button').addClass('active').css('background-color', 'blue');
+---
 
-// Event listener
-$('.my-button').on('click', (e) => {
-    console.log('Clicked!');
-});
+## API Reference
 
-// Get or set input values
-const username = $('#username').val();
-$('#username').val('New Value');
+### Selection & Creation
+* **`$(selector)`** - Selects elements via CSS selector string, native `Element`, or an array/collection.
 
-// DOM Ready
-$.ready(() => {
-    console.log('DOM is fully loaded!');
-});
-```
+### Manipulation & Insertion
+* **`append(content)`** - Inserts content at the end of each selected element.
+* **`prepend(content)`** - Inserts content at the beginning of each selected element.
+* **`before(content)`** - Inserts content before each selected element.
+* **`after(content)`** - Inserts content after each selected element.
+* **`remove()`** - Removes selected elements from the DOM.
+* **`empty()`** - Clears all child nodes and inner HTML inside selected elements.
+* **`html(content)`** - Gets or sets the inner HTML.
+* **`text(content)`** - Gets or sets the text content.
+* **`val(content)`** - Gets or sets the value of input elements.
+
+### Classes & Attributes
+* **`addClass(className)`** - Adds a class to selected elements.
+* **`removeClass(className)`** - Removes a class from selected elements.
+* **`toggleClass(className)`** - Toggles a class on selected elements.
+* **`hasClass(className)`** - Returns `true` if the first element has the class.
+* **`attr(name, value)`** - Gets or sets an attribute.
+* **`data(name, value)`** - Gets or sets a `data-*` dataset attribute.
+* **`css(property, value)`** - Applies an inline style to selected elements.
+
+### Events
+* **`on(event, handler)`** - Attaches an event listener.
+* **`off(event, handler)`** - Removes an event listener.
+
+### Traversal
+* **`find(selector)`** - Finds descendant elements matching the selector.
+* **`parent()`** - Gets the unique parent elements.
+* **`children(selector)`** - Gets direct child elements (optionally filtered by selector).
+
+### Iteration & Utilities
+* **`each(callback)`** - Iterates over elements (with callback context bound to the element).
+* **`length`** - Property returning the number of elements in the collection.
+* **`$.ready(callback)`** - Executes callback when the DOM is fully loaded.
+
+---
+
+## License
+
+MIT
