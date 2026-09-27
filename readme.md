@@ -1,8 +1,8 @@
-# QLiteCollection ($)
+# Query-Lite (QLite)
 
 A lightweight, high-performance, jQuery-inspired DOM manipulation and traversal library written in modern JavaScript. 
 
-`QLiteCollection` gives you the familiar, chainable syntax of jQuery (`$`) using modern native browser APIs, keeping your footprint tiny without sacrificing the utility methods you use every day.
+`QLite` gives you the familiar, chainable syntax of jQuery (`$`) using modern native browser APIs, keeping your footprint tiny without sacrificing the utility methods you use every day.
 
 ---
 
