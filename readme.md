@@ -42,29 +42,36 @@ Simply drop the script into your project or include it via a script tag:
 ### Selection & Creation
 * **`$(selector)`** - Selects elements via CSS selector string, native `Element`, or an array/collection.
 
-### Manipulation & Insertion
+### Getters
+* **`html()`** - Gets the inner HTML of the first element in the collection.
+* **`text()`** - Gets the text content of the first element in the collection.
+* **`val()`** - Gets the value of the first input element in the collection.
+* **`attr(name)`** - Gets an attribute value from the first element in the collection.
+* **`data(name)`** - Gets a `data-*` dataset attribute from the first element in the collection.
+* **`hasClass(className)`** - Returns `true` if the first element has the specified class.
+
+### Setters & Manipulation
+* **`html(content)`** - Sets the inner HTML for all selected elements.
+* **`text(content)`** - Sets the text content for all selected elements.
+* **`val(content)`** - Sets the value for all selected elements.
+* **`attr(name, value)`** - Sets an attribute value for all selected elements.
+* **`data(name, value)`** - Sets a `data-*` dataset attribute for all selected elements.
 * **`append(content)`** - Inserts content at the end of each selected element.
 * **`prepend(content)`** - Inserts content at the beginning of each selected element.
 * **`before(content)`** - Inserts content before each selected element.
 * **`after(content)`** - Inserts content after each selected element.
 * **`remove()`** - Removes selected elements from the DOM.
 * **`empty()`** - Clears all child nodes and inner HTML inside selected elements.
-* **`html(content)`** - Gets or sets the inner HTML.
-* **`text(content)`** - Gets or sets the text content.
-* **`val(content)`** - Gets or sets the value of input elements.
+* **`css(property, value)`** - Applies an inline style to selected elements.
 
-### Classes & Attributes
+### Classes
 * **`addClass(className)`** - Adds a class to selected elements.
 * **`removeClass(className)`** - Removes a class from selected elements.
 * **`toggleClass(className)`** - Toggles a class on selected elements.
-* **`hasClass(className)`** - Returns `true` if the first element has the class.
-* **`attr(name, value)`** - Gets or sets an attribute.
-* **`data(name, value)`** - Gets or sets a `data-*` dataset attribute.
-* **`css(property, value)`** - Applies an inline style to selected elements.
 
 ### Events
-* **`on(event, handler)`** - Attaches an event listener.
-* **`off(event, handler)`** - Removes an event listener.
+* **`on(event, handler)`** - Attaches an event listener to selected elements.
+* **`off(event, handler)`** - Removes an event listener from selected elements.
 
 ### Traversal
 * **`find(selector)`** - Finds descendant elements matching the selector.
@@ -79,5 +86,3 @@ Simply drop the script into your project or include it via a script tag:
 ---
 
 ## License
-
-MIT
